@@ -302,14 +302,22 @@ try{vlibrasjs.load({ async: true });}catch(e){}
 						<h3>Próximos eventos</h3>
 						<ul class="ev-list" id="ev-list"></ul>
 					</div>
-					<div class="ev-card ev-detail" id="ev-detail" aria-live="polite">
-						<h3>Detalhes</h3>
-						<p class="ev-empty">Clique em um evento para ver os detalhes.</p>
-					</div>
-				</aside>
+					</aside>
 			</div>
+
+			<section class="rot-section" id="roteiros" aria-labelledby="rot-titulo">
+				<h2 id="rot-titulo">Roteiros Turísticos</h2>
+				<p>Escolha um roteiro para ver o portfólio de imagens e o passo a passo.</p>
+				<div class="rot-grid" id="rot-grid"></div>
+			</section>
 		</div>
 	</section>
+
+	<dialog id="ev-modal" aria-label="Detalhes">
+		<button type="button" id="ev-close" aria-label="Fechar">&times;</button>
+		<div id="ev-modal-body"></div>
+	</dialog>
+
 
 </main><!-- /#content -->
 
@@ -916,6 +924,7 @@ var e="script#wp-emoji-settings",t=document.querySelector(e);if(!(t instanceof H
 </script>
 <script src="eventos-assets/fullcalendar.min.js"></script>
 <script src="eventos-assets/fullcalendar-pt-br.js"></script>
+<script src="eventos-assets/dados.js"></script>
 <script src="eventos-assets/eventos.js"></script>
 </body>
 

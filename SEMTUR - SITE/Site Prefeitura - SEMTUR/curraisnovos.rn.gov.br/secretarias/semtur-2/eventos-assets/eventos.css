@@ -35,3 +35,33 @@
 
 @media (max-width: 900px) { .ev-layout { grid-template-columns: 1fr; } }
 @media (max-width: 600px) { #calendario .fc-toolbar { flex-direction: column; gap: 8px; } }
+
+/* Janela de detalhes */
+#ev-modal { border: 0; border-radius: var(--radius); padding: 0; width: min(760px, 94vw); max-height: 90vh; box-shadow: var(--shadow-lg, 0 20px 50px rgba(0,0,0,.35)); color: var(--c-text); background: var(--c-surface); }
+#ev-modal::backdrop { background: rgba(0,0,0,.55); }
+#ev-modal-body { padding: 24px; }
+#ev-close { position: absolute; top: 10px; right: 12px; width: 38px; height: 38px; border-radius: 50%; border: 0; background: var(--c-primary); color: #fff; font-size: 1.3rem; cursor: pointer; }
+#ev-modal h2 { font-family: var(--font-display); color: var(--c-primary); margin: 8px 0 14px; }
+#ev-modal h3 { font-family: var(--font-display); font-size: 1.05rem; margin: 18px 0 8px; color: var(--c-primary); }
+.tag { display: inline-block; background: var(--dot); color: #fff; font: 700 .75rem var(--font-body); padding: 3px 10px; border-radius: 999px; }
+.gal-main { width: 100%; aspect-ratio: 16/10; object-fit: cover; border-radius: var(--radius-sm); display: block; }
+.gal-thumbs { display: flex; gap: 8px; margin-top: 8px; }
+.gal-thumbs button { padding: 0; border: 2px solid var(--c-border); border-radius: 6px; overflow: hidden; width: 84px; cursor: pointer; background: none; }
+.gal-thumbs img { width: 100%; display: block; aspect-ratio: 16/10; object-fit: cover; }
+.gal-nota { font-size: .75rem; color: var(--c-text-muted); margin: 6px 0 14px; }
+.meta { display: grid; grid-template-columns: auto 1fr; gap: 4px 14px; margin: 0; }
+.meta dt { font-weight: 700; color: var(--c-text-muted); } .meta dd { margin: 0; }
+.prog { list-style: none; padding: 0; margin: 0; display: grid; gap: 8px; }
+.prog li { display: grid; grid-template-columns: 84px 1fr; gap: 10px; padding: 8px 12px; background: var(--c-bg); border-left: 4px solid var(--c-gold); border-radius: var(--radius-sm); }
+
+/* Roteiros turísticos */
+.rot-section { margin-top: 48px; }
+.rot-section h2 { font-family: var(--font-display); color: var(--c-primary); margin: 0 0 6px; }
+.rot-section > p { color: var(--c-text-muted); margin: 0 0 18px; }
+.rot-grid { display: grid; grid-template-columns: repeat(auto-fill, minmax(240px, 1fr)); gap: 18px; }
+.rot-card { text-align: left; padding: 0; border: 1px solid var(--c-border); border-radius: var(--radius); overflow: hidden; background: var(--c-surface); box-shadow: var(--shadow-sm); cursor: pointer; font: inherit; color: var(--c-text); display: flex; flex-direction: column; transition: transform .15s; }
+.rot-card:hover, .rot-card:focus-visible { transform: translateY(-3px); outline: 3px solid var(--c-gold); }
+.rot-card img { width: 100%; aspect-ratio: 16/10; object-fit: cover; display: block; }
+.rot-body { padding: 14px; display: grid; gap: 6px; font-size: .88rem; }
+.rot-body strong { font-family: var(--font-display); color: var(--c-primary); font-size: 1rem; }
+.rot-body em { font-style: normal; font-weight: 700; color: var(--c-primary); font-size: .8rem; }

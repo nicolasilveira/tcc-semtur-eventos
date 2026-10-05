@@ -1,8 +1,0 @@
-[
-  { "id": "1", "title": "Feira de Artesanato (exemplo)", "start": "2026-10-03", "end": "2026-10-05", "categoria": "cultura", "local": "Praça Cel. José Bezerra", "descricao": "Evento de exemplo para testar o calendário. Substitua pelos dados reais." },
-  { "id": "2", "title": "Corrida Rústica (exemplo)", "start": "2026-10-11T07:00:00", "categoria": "esporte", "local": "Complexo Esportivo", "descricao": "Evento de exemplo com horário definido." },
-  { "id": "3", "title": "Festival Gastronômico (exemplo)", "start": "2026-10-17", "end": "2026-10-19", "categoria": "turismo", "local": "Centro", "descricao": "Evento de exemplo que dura mais de um dia." },
-  { "id": "4", "title": "Audiência Pública (exemplo)", "start": "2026-10-22T14:00:00", "categoria": "prefeitura", "local": "Câmara Municipal", "descricao": "Evento de exemplo de caráter institucional." },
-  { "id": "5", "title": "Noite Cultural (exemplo)", "start": "2026-10-29T19:30:00", "categoria": "cultura", "local": "Teatro Municipal", "descricao": "Evento de exemplo." },
-  { "id": "6", "title": "Encontro de Empreendedores (exemplo)", "start": "2026-11-06T09:00:00", "categoria": "turismo", "local": "Auditório da Prefeitura", "descricao": "Evento de exemplo." }
-]
