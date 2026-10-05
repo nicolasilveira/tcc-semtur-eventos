@@ -1,0 +1,98 @@
+/*
+Theme Name: Currais Novos Tema completo final
+Theme URI: https://curraisnovos.rn.gov.br
+Author: Prefeitura Municipal de Currais Novos
+Author URI: https://curraisnovos.rn.gov.br
+Description: Tema oficial da Prefeitura Municipal de Currais Novos. Compatível com Elementor e Elementor Pro (Theme Builder). Inclui Custom Post Types para Notícias e Secretarias, taxonomias personalizadas e templates institucionais prontos para edição visual.
+Version: 1.0.0
+Requires at least: 6.0
+Tested up to: 6.6
+Requires PHP: 7.4
+License: GPL v2 or later
+License URI: http://www.gnu.org/licenses/gpl-2.0.html
+Text Domain: currais-novos
+Tags: government, news, elementor, custom-post-types, accessibility-ready, two-columns, custom-menu, custom-logo
+*/
+
+/* O CSS principal está em assets/css/main.css (carregado via wp_enqueue_style).
+   Esta folha existe apenas para o cabeçalho do tema exigido pelo WordPress
+   e para overrides de admin/editor leves. */
+
+/* Notícias no padrão service-grid, mas com layout vertical: foto, título e texto. */
+.news-service-grid {
+	align-items: stretch;
+}
+
+.news-service-grid .news-svc-card {
+	display: grid;
+	grid-template-columns: 1fr;
+	grid-template-rows: auto 1fr;
+	align-items: stretch;
+	gap: 0;
+	padding: 0;
+	min-height: 0;
+	overflow: hidden;
+	position: relative;
+}
+
+.news-service-grid .news-svc-card .news-svc-card__thumb {
+	display: block;
+	width: 100%;
+	height: auto;
+	aspect-ratio: 16 / 10;
+	border-radius: 0;
+	background: #e9eef7;
+	box-shadow: none;
+	overflow: hidden;
+}
+
+.news-service-grid .news-svc-card .news-svc-card__thumb img {
+	display: block;
+	width: 100%;
+	height: 100%;
+	object-fit: cover;
+}
+
+.news-service-grid .news-svc-card .news-svc-card__body {
+	display: flex;
+	flex-direction: column;
+	gap: 8px;
+	padding: 18px 46px 18px 18px;
+	min-width: 0;
+}
+
+.news-service-grid .news-svc-card .news-svc-card__body h4 {
+	display: block;
+	margin: 0;
+	font-size: 16px;
+	line-height: 1.3;
+}
+
+.news-service-grid .news-svc-card .news-svc-card__body p {
+	margin: 0;
+	font-size: 13px;
+	line-height: 1.45;
+}
+
+.news-service-grid .news-svc-card .svc-card__arrow {
+	position: absolute;
+	right: 16px;
+	bottom: 16px;
+	opacity: 1;
+	transform: none;
+}
+
+.news-service-grid .news-svc-card:hover .svc-card__arrow {
+	opacity: 1;
+	transform: translateX(0);
+}
+
+@media (max-width: 600px) {
+	.news-service-grid .news-svc-card .news-svc-card__thumb {
+		aspect-ratio: 16 / 9;
+	}
+
+	.news-service-grid .news-svc-card .news-svc-card__body {
+		padding: 16px 44px 16px 16px;
+	}
+}
