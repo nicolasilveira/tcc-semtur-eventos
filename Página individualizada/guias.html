@@ -1,0 +1,36 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover">
+<title>Guias Turísticos · Sec. de Desenvolvimento Econômico, Turismo e Inovação · Currais Novos</title>
+<link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Poppins:wght@500;600;700;800&family=Inter:wght@400;500;600&display=swap">
+<link rel="stylesheet" href="css/style.css">
+</head>
+<body>
+<div class="top"><div class="w"><span>📅 <span id="hoje"></span></span><span><button onclick="fz(-1)">A–</button><button onclick="fz(0)">A</button><button onclick="fz(1)">A+</button><button onclick="tm()" title="Alto contraste">◐</button></span></div></div>
+<header class="hd"><div class="w"><div class="logo"><svg viewBox="0 0 60 50"><circle cx="30" cy="27" r="20" fill="none" stroke="#17b26a" stroke-width="5" stroke-dasharray="4 3"/><path d="M14 30q16-20 32 0z" fill="#e8892b"/><rect x="12" y="29" width="36" height="5" rx="2" fill="#b3541a"/></svg><span>CURRAIS<br>NOVOS</span></div><form class="search" onsubmit="return false"><span>🔍</span><input placeholder="O que você procura? Ex: eventos, guias, roteiros"><button class="btn">Buscar</button></form></div></header>
+<nav><div class="w"><a href="index.html">Início</a><a href="eventos.html">Eventos</a><a href="guias.html" class="on">Guias Turísticos</a></div></nav>
+<section class="hero"><div class="w"><small>SEMTUR · Guias Turísticos</small><h1>Guias Turísticos</h1></div></section>
+<div class="fab"><span>♿</span><span style="background:#2b66d9">🤟</span></div>
+
+<main><div class="w">
+<div class="row"><h2 class="pp" style="font-size:1.6rem;color:var(--navy)">Cardápio de Guias Turísticos</h2></div>
+<p style="color:var(--mu);margin-top:0">Escolha seu guia e conheça o portfólio completo. Todos são cadastrados pela Secretaria.</p>
+<div class="menu" id="mn"></div><p class="nt">Perfis fictícios de exemplo.</p>
+</div></main>
+
+<footer><div class="w"><div class="fg"><div><div class="logo"><svg viewBox="0 0 60 50"><circle cx="30" cy="27" r="20" fill="none" stroke="#17b26a" stroke-width="5" stroke-dasharray="4 3"/><path d="M14 30q16-20 32 0z" fill="#e8892b"/></svg><span>CURRAIS<br>NOVOS</span></div><p>Av. Coronel José Bezerra, nº 10 – Centro<br>Currais Novos - RN</p><p><b>Atendimento:</b> Segunda a sexta, 7h às 13h</p></div>
+<div><h5>ACESSO RÁPIDO</h5><a href="index.html">Início</a><a href="eventos.html">Eventos</a><a href="guias.html">Guias Turísticos</a></div>
+<div><h5>CONTATO</h5><a href="tel:84987629337">(84) 98762-9337</a><a href="mailto:currainovosturismo@gmail.com">currainovosturismo@gmail.com</a></div>
+<div><h5>CONECTE-SE</h5><p>Acompanhe a Secretaria nas redes sociais e fique por dentro de tudo.</p><p style="font-size:1.3rem">f &nbsp; ◎ &nbsp; ▶</p></div></div>
+<div class="cp"><span>© 2026 Sec. de Desenvolvimento Econômico, Turismo e Inovação - Todos os direitos reservados.</span><button onclick="scrollTo(0,0)">↑ Voltar ao topo</button></div></div></footer>
+
+
+<div class="ov" id="ov" onclick="if(event.target===this)cl()"><div class="md" id="md"></div></div>
+
+<script src="js/main.js"></script>
+<script src="js/dados-guias.js"></script>
+<script src="js/guias.js"></script>
+</body>
+</html>
