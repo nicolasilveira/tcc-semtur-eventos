@@ -1,0 +1,31 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+<head>
+<meta charset="utf-8"><meta name="viewport" content="width=device-width, initial-scale=1">
+<meta name="robots" content="noindex,nofollow">
+<title>Acesso restrito - Painel de Eventos</title>
+<link rel="stylesheet" href="eventos-assets/admin.css">
+</head>
+<body>
+<header class="top"><strong>Painel de Eventos · SEMTUR</strong><span><a href="eventos.html">← Ver página de eventos</a><button id="sair" type="button" class="b">Sair</button></span></header>
+<main>
+<section id="login" class="card login">
+  <h1>Acesso restrito</h1><p>Área exclusiva para a equipe da Secretaria.</p>
+  <form id="form-login"><label class="fld"><span class="lbl">Senha</span><input id="senha" type="password" autocomplete="current-password" required></label>
+  <p id="erro-login" class="erro" role="alert"></p><button class="b pri" type="submit">Entrar</button></form>
+  <p class="dica">Versão de testes: a senha é 123.</p>
+</section>
+<section id="painel" hidden>
+  <nav class="tabs"><button type="button" data-sec="eventos">Eventos</button><button type="button" data-sec="roteiros">Roteiros turísticos</button></nav>
+  <div class="card"><h2 id="titulo-sec"></h2>
+    <div class="modos"><button type="button" data-modo="criar">＋ Criar</button><button type="button" data-modo="alterar">✎ Alterar detalhes</button><button type="button" data-modo="excluir">🗑 Excluir</button></div>
+    <div id="area"></div></div>
+  <div class="card rodape"><strong>Backup:</strong><button type="button" class="b" id="exp">Exportar</button><label class="b" for="imp">Importar</label><input id="imp" type="file" accept=".json" hidden><button type="button" class="b perigo" id="rest">Restaurar exemplos</button></div>
+</section>
+</main>
+<div id="toast" class="toast" role="status"></div>
+<script src="eventos-assets/dados.js"></script>
+<script src="eventos-assets/armazenamento.js"></script>
+<script src="eventos-assets/admin.js"></script>
+</body>
+</html>

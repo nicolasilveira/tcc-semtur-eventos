@@ -8,6 +8,7 @@
   let eventos = [], roteiros = [], ativas = new Set(Object.keys(CAT)), calendar;
   const $ = (id) => document.getElementById(id);
   const esc = (t) => String(t == null ? '' : t).replace(/[&<>"']/g, (c) => ({ '&': '&amp;', '<': '&lt;', '>': '&gt;', '"': '&quot;', "'": '&#39;' }[c]));
+  const fimCal = (f) => { if (!f || f.includes('T')) return f; const d = new Date(f + 'T00:00'); d.setDate(d.getDate() + 1); return d.toLocaleDateString('sv-SE'); };
   const temHora = (iso) => String(iso).includes('T');
   const fmt = (iso) => new Date(iso + (temHora(iso) ? '' : 'T00:00')).toLocaleString('pt-BR', temHora(iso) ? { dateStyle: 'long', timeStyle: 'short' } : { dateStyle: 'long' });
   const periodo = (e) => fmt(e.start) + (e.end ? ' a ' + fmt(e.end) : '');
@@ -30,7 +31,7 @@
     const c = CAT[e.categoria] || {};
     abrir('<span class="tag" style="--dot:' + c.cor + '">' + esc(c.nome) + '</span><h2>' + esc(e.title) + '</h2>' +
       galeria(e.imagens, e.title) +
-      '<p>' + esc(e.descricao) + '</p><dl class="meta"><dt>Quando</dt><dd>' + esc(periodo(e)) + '</dd><dt>Onde</dt><dd>' + esc(e.local) + '</dd></dl>' +
+      '<p>' + esc(e.descricao) + '</p><dl class="meta"><dt>Quando</dt><dd>' + esc(periodo(e)) + '</dd><dt>Onde</dt><dd>' + esc(e.local) + '</dd>' + (e.valor ? '<dt>Valor</dt><dd>' + esc(e.valor) + '</dd>' : '') + '</dl>' +
       '<h3>Programação</h3>' + lista(e.programacao));
   }
   function abrirRoteiro(id) {
@@ -64,7 +65,7 @@
   }
   function atualizar() {
     calendar.removeAllEvents();
-    eventos.filter(e => ativas.has(e.categoria)).forEach(e => calendar.addEvent({ id: e.id, title: e.title, start: e.start, end: e.end, color: CAT[e.categoria].cor }));
+    eventos.filter(e => ativas.has(e.categoria)).forEach(e => calendar.addEvent({ id: e.id, title: e.title, start: e.start, end: fimCal(e.end), color: CAT[e.categoria].cor }));
     listarProximos();
   }
   function montarRoteiros() {
@@ -89,7 +90,7 @@
     calendar.render(); montarFiltros();
     $('ev-close').addEventListener('click', () => $('ev-modal').close());
     $('ev-modal').addEventListener('click', (ev) => { if (ev.target === ev.currentTarget) ev.currentTarget.close(); });
-    eventos = window.EVENTOS || []; roteiros = window.ROTEIROS || [];
+    const D = Dados.carregar(); eventos = D.eventos; roteiros = D.roteiros;
     atualizar(); montarRoteiros();
   });
 })();

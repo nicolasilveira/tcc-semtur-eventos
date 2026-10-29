@@ -65,3 +65,9 @@
 .rot-body { padding: 14px; display: grid; gap: 6px; font-size: .88rem; }
 .rot-body strong { font-family: var(--font-display); color: var(--c-primary); font-size: 1rem; }
 .rot-body em { font-style: normal; font-weight: 700; color: var(--c-primary); font-size: .8rem; }
+
+/* Botão de acesso restrito */
+.page-hero .container{position:relative}
+.acesso-restrito{position:absolute;top:0;right:16px;background:#12a5b8;color:#fff;font-weight:700;font-size:.85rem;padding:8px 14px;border-radius:6px;text-decoration:none}
+.acesso-restrito:hover,.acesso-restrito:focus-visible{background:#0d8493;outline:3px solid var(--c-gold)}
+@media (max-width:600px){.acesso-restrito{position:static;display:inline-block;margin-bottom:10px}}
